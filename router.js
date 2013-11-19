@@ -15,7 +15,7 @@ define([
 				//Default
 				'*actions': 'defaultAction'
 			}
-		}
+		
 	});
 
 	var initialize = function(){
