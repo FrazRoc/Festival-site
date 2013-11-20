@@ -2,7 +2,7 @@
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,33 +11,33 @@
         <meta name="description" content="Evans Site">
         <meta name="author" content="Evan Frasz">
 
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="css/bootstrap.css">
 
-        <script data-main="main" src="js/libs/require/require.js"></script>
+        <script data-main="js/main" src="js/libs/require/require.js"></script>
 </head>
 <body>
 
-<div id="container">
+<div class="container">
   <div id="logo">
     <h1>Bands!</h1>
   </div>
 
-  <div class="menu navbar">
-    <div class="navbar-inner">
-      <ul class="nav">
-        <li><a href="#" >Home</a></li>
+  <!--<div class="menu navbar"> 
+    <div class="navbar-inner">-->
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#" >Home</a></li>
         <li ><a href="#/projects" >Bands</a></li>
-        <li><a href="#/users">Contributors</a></li>
+        <li><a href="#/users">Users</a></li>
       </ul>
-    </div>
-  </div>
-
+    <!--</div>
+  </div>-->
 
   <div id="page">
-    Loading....
   </div>
+  <div id="projects-list"></div>
+
   <div id="footer"></div>
 </div> 
 

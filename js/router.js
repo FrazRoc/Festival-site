@@ -3,14 +3,16 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
-	'views/projects/list',
-	'views/users/list'
-	], function($, _, Backbone, ProjectListView, UserListView){
+	'views/home/HomeView',
+	'views/project/list'
+	//,
+	//'views/users/list'
+	], function($, _, Backbone, HomeView, ProjectListView){
 		var AppRouter = Backbone.Router.extend({
 			routes: {
 				//url routes
-				'/projects': "showProjects",
-				'/users': 'showUsers',
+				'projects': "showProjects",
+				'users': 'showUsers',
 
 				//Default
 				'*actions': 'defaultAction'
@@ -20,22 +22,26 @@ define([
 
 	var initialize = function(){
 		var app_router = new AppRouter;
+		console.log("router")
 		
-		app_router.on('showProjects', function(){
+		app_router.on('route:showProjects', function(){
 			//call render on the dependency
+			console.log("create project");
 			var projectListView = new ProjectListView();
-			projectListView.render();
+			//projectListView.render();
 		});
 
 		app_router.on('showUsers', function(){
 			//call render on the dependency
 			var userListView = new UserListView();
-			userListView.render();
+			//userListView.render();
 		});
 
-		app_router.on('defaultAction', function(actions){
+		app_router.on('route:defaultAction', function(actions){
 	    	// We have no matching route, lets just log what the URL was
 	    	console.log('No route:', actions);
+	    	var homeView = new HomeView();
+        	homeView.render();
 	    });
 
 	    Backbone.history.start();

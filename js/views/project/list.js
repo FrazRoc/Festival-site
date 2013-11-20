@@ -1,28 +1,33 @@
 //Filename: js/views/project/list.js
 define([
-	'jquery',
-	'underscore', 
+	//'jquery',
+	//'underscore', 
 	'backbone',
 	'collections/projects',
-	'text!templates/project/list.html'
-], function($, _, Backbone, projectListTemplate){
+	'text!../../../templates/project/projectListTemplate.html'
+], function( Backbone, ProjectsCollection, projectListTemplate){
 	var ProjectListView = Backbone.View.extend({
-		el: $('#container'),
+		el: $('#projects-list'),
 		initialize: function(){
+
+			console.log("init view");
+
 			this.collection = new ProjectsCollection();
-			this.collection.add({ name: "White Stripes"});
-			this.collection.add({ name: "Radiohead"});
+			this.collection.add({ name: "White Stripes", singer: "Jack White"});
+			this.collection.add({ name: "Radiohead", singer: "Thom Yorke"});
 
 			this.render(this.collection.models);
 
-		}
+		},
 		render: function(data){
-
-			var compiledTemplate = _.template( projectListTemplate, data);
-
-			this.$el.append( compiledTemplate );
+			console.log("render view", data)
+		
+			var compiledTemplate = _.template( projectListTemplate, {projects:data});
+			$("#page").html("");
+			console.log("compiledTemplate", compiledTemplate)
+			$("#projects-list").html(compiledTemplate);
 		}
 });
-	
+	console.log("there");
 	return ProjectListView;  
 });

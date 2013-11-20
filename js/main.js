@@ -4,10 +4,18 @@
 // There usage will become more apparent further along in the tutorial.
 require.config({
   paths: {
-    jquery: 'js/libs/jquery/jquery-1.10.2.min',
-    underscore: 'js/libs/underscore/underscore-min',
-    backbone: 'js/libs/backbone/backbone'
-  }
+    jquery: 'libs/jquery/jquery-1.10.2.min',
+    backbone: 'libs/backbone/backbone',
+    underscore: 'libs/underscore/underscore-min',
+    templates: '../templates'
+    
+  },
+   shim: {
+        backbone: {
+            deps: ['jquery','underscore'],
+            exports: 'Backbone'
+        }
+    }
 
 });
 
@@ -17,5 +25,6 @@ require([
   'app',
 ], function(App){
   // The "app" dependency is passed in as "App"
+  console.log("app")
   App.initialize();
 });
