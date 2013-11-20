@@ -21,6 +21,7 @@ define([
 ], function($, _, Backbone, ProjectModel){
   var ProjectsCollection = Backbone.Collection.extend({
     model: ProjectModel,
+    url: 'http://api.setlist.fm/rest/0.1/artist/',
     
     initialize: function(){
 

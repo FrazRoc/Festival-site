@@ -13,8 +13,8 @@ define([
 			console.log("init view");
 
 			this.collection = new ProjectsCollection();
-			this.collection.add({ name: "White Stripes", singer: "Jack White"});
-			this.collection.add({ name: "Radiohead", singer: "Thom Yorke"});
+			this.collection.add({ name: "White Stripes", singer: "Jack White", id: '11ae9fbb-f3d7-4a47-936f-4c0a04d3b3b5'});
+			this.collection.add({ name: "Radiohead", singer: "Thom Yorke", id: "a74b1b7f-71a5-4011-9441-d0b5e4122711"});
 
 			this.render(this.collection.models);
 

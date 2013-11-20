@@ -7,6 +7,9 @@ define([
 		defaults: {
 			name: "Modest Mouse",
 			singer: "Isaac Brock"
+		},
+		initialize: function(){
+			this.fetch();
 		}
 	});
 
