@@ -21,6 +21,9 @@ define([
 		},
 		render: function(data){
 			console.log("render view", data)
+
+			 $('.nav-tabs li').removeClass('active');
+      		$('.nav-tabs li a[href="'+window.location.hash+'"]').parent().addClass('active');
 		
 			var compiledTemplate = _.template( projectListTemplate, {projects:data});
 			$("#page").html("");
