@@ -1,17 +1,4 @@
 // Filename: collections/projects
-/*define([
-	'underscore',
-	'backbone',
-	// Pull in the Model module from above
-	'models/project/ProjectModel'
-], function(_, Backbone, ProjectModel){
-	var ProjectCollection = Backbone.Collection.extend({
-	model: ProjectModel
-	});
-	// You don't usually return a collection instantiated
-	return ProjectCollection;
-});
-*/
 
 define([
   'jquery',
@@ -20,14 +7,20 @@ define([
   'models/project/ProjectModel'
 ], function($, _, Backbone, ProjectModel){
   var ProjectsCollection = Backbone.Collection.extend({
-    model: ProjectModel,
-    url: 'http://api.setlist.fm/rest/0.1/artist/',
-    
-    initialize: function(){
+	model: ProjectModel,
+	url: 'setlist/artist/',
 
-      //this.add([project0, project1, project2, project3, project4]);
+	//not used
+	urlId: function() {
+	  return this.document.url() + '/notes';
+	},
+	
+	initialize: function(){
 
-    }
+	  //this.add([project0, project1, project2, project3, project4]);
+	  //this.
+
+	}
 
   });
  

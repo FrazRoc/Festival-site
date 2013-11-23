@@ -8,8 +8,13 @@ define([
 			name: "Modest Mouse",
 			singer: "Isaac Brock"
 		},
+
+		parse: function(response) {
+	    	return response.artist;
+		},
 		initialize: function(){
 			this.fetch();
+			console.log("this model", this )
 		}
 	});
 
