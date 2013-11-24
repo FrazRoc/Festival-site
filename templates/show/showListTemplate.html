@@ -4,17 +4,15 @@
 			<th>Date</th>
 			<th>Artist</th>
 			<th>Venue</th>
+			<th>City</th>
 		</tr>
 	</thead>
   <% _.each(shows, function(show){ %>
-  	<% console.log("FFFFFFFFF", show); %>
-   
 	   <tr>
-	   		<td > <%= show.attributes["@eventDate"] %> </td>
-			<td > <a href= "<%= show.attributes["url"] %>"><%= show.attributes.artist["@name"] %> </a></td>
+	   		<td > <a href= "<%= show.attributes["url"] %>"><%= show.attributes["@eventDate"] %> </a></td>
+			<td > <a href= "<%= show.attributes.artist["url"] %>"><%= show.attributes.artist["@name"] %> </a></td>
 	  		<td > <%= show.attributes.venue["@name"] %> </td>
-		
+	  		<td > <%= show.attributes.venue.city["@name"] %>, <%= show.attributes.venue.city["@stateCode"] %> </td>
 		</tr> 
-	
   <% }); %>
 </table>
