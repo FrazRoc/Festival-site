@@ -1,8 +1,22 @@
-<ul class="list-group">
-  <% _.each(projects, function(project){ %>
-   <li class="list-group-item"><a href='<%= project.get("name") %>'>
-		<%= project.get("name") %> : <%= project.get("singer") %>
-	</a></li> 
-  <% }); %>
-</ul>
 
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th></th>
+			<th>Artist</th>
+			<th># Plays</th>
+		</tr>
+	</thead>
+  <% _.each(topartists, function(artist, i){ %>
+	   <tr>
+	   		<td> <%= i+1 %>. </td>
+	   		<td> 
+	   			<a href= "<%= artist.get("url") %>">
+	   				<img src= "<%= artist.get("image")[0]["#text"] %>" >
+	   					<%= artist.get("name") %> 
+	   			</a>
+	   		</td>
+			<td> <%= artist.get("playcount") %> </td>
+		</tr> 
+  <% }); %>
+</table>

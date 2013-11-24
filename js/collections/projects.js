@@ -8,18 +8,15 @@ define([
 ], function($, _, Backbone, ProjectModel){
   var ProjectsCollection = Backbone.Collection.extend({
 	model: ProjectModel,
-	url: 'setlist/artist/',
-
-	//not used
-	urlId: function() {
-	  return 'setlist/artist/' + this.id + '.json';
+	url: function() {
+	  return 'lastfm/?method=user.gettopartists&user=' + 'frazroc' + '&api_key=' + 'bd9844981c1afbab9b83da62a89604e3' + '&format=json';
 	},
-	
+
+	parse: function(response) {
+	    return response.topartists.artist;
+	},
+
 	initialize: function(){
-
-	  //this.add([project0, project1, project2, project3, project4]);
-	  //this.
-
 	}
 
   });

@@ -5,15 +5,14 @@ define([
 	'backbone',
 	'views/home/HomeView',
 	'views/project/list',
-	'views/show/ShowView'
-	//,
-	//'views/users/list'
-	], function($, _, Backbone, HomeView, ProjectListView, ShowView){
+	'views/show/ShowView',
+	'views/user/UserView'
+	], function($, _, Backbone, HomeView, ProjectListView, ShowView, UserView){
 		var AppRouter = Backbone.Router.extend({
 			routes: {
 				//url routes
 				'projects': "showProjects",
-				'users': 'showUsers',
+				'user': 'showUser',
 				'shows': 'showShows',
 
 				//Default
@@ -29,20 +28,17 @@ define([
 			//call render on the dependency
 			console.log("create project");
 			var projectListView = new ProjectListView();
-			//projectListView.render();
 		});
 
 		app_router.on('route:showShows', function(){
 			//call render on the dependency
 			console.log("create shows");
 			var showView = new ShowView();
-			//projectListView.render();
 		});
 
-		app_router.on('showUsers', function(){
+		app_router.on('route:showUser', function(){
 			//call render on the dependency
-			var userListView = new UserListView();
-			//userListView.render();
+			var userView = new UserView();
 		});
 
 		app_router.on('route:defaultAction', function(actions){

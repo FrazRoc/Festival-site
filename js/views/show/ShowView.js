@@ -13,12 +13,17 @@ define([
 			console.log("init show view");
 			var self = this;
 
-			this.collection = new ShowsCollection({user: 'evanfrasz'});
-			this.collection.fetch({success: function(){
-			    console.log("models:",self.collection); 
-			    self.render(self.collection);
-			}});
-
+			//to make more responsive we should render first then have callback when the fetch is done
+			if (!this.collection){
+				this.collection = new ShowsCollection({user: 'evanfrasz'});
+				this.collection.fetch({success: function(){
+				    console.log("models:",self.collection); 
+				    self.render(self.collection);
+				}});
+			}
+			else {
+				self.render(self.collection);
+			}
 			//this.render(this.collection);
 
 		},
