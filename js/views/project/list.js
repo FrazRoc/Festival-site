@@ -28,9 +28,9 @@ define([
 			var compiledTemplate = _.template( projectListTemplate, {projects:data});
 			$("#page").html("");
 			//console.log("compiledTemplate", compiledTemplate)
-			$("#projects-list").html(compiledTemplate);
+			$("#page").html(compiledTemplate);
 		}
 });
-	console.log("there");
+	
 	return ProjectListView;  
 });

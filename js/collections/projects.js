@@ -12,7 +12,7 @@ define([
 
 	//not used
 	urlId: function() {
-	  return this.document.url() + '/notes';
+	  return 'setlist/artist/' + this.id + '.json';
 	},
 	
 	initialize: function(){

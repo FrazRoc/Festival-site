@@ -1,0 +1,20 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Artist</th>
+			<th>Venue</th>
+		</tr>
+	</thead>
+  <% _.each(shows, function(show){ %>
+  	<% console.log("FFFFFFFFF", show); %>
+   
+	   <tr>
+	   		<td > <%= show.attributes["@eventDate"] %> </td>
+			<td > <a href= "<%= show.attributes["url"] %>"><%= show.attributes.artist["@name"] %> </a></td>
+	  		<td > <%= show.attributes.venue["@name"] %> </td>
+		
+		</tr> 
+	
+  <% }); %>
+</table>

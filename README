@@ -1,0 +1,33 @@
+Ideas for this project
+
+- A place to compile all music stats from APIs around the internet
+	1. Setlist.fm
+	2. Last.fm
+	3. iTunes?
+	4. Spotify
+	5. Grooveshark
+	6. BandsInTown
+	7. Rdio
+
+- Create a login to this site
+	- Create a user name/ password
+	- Log into as many other APIs as you want. 
+		- How do we store passwords or tokens?
+
+- Compile this information together
+	- Last.fm to show music history
+	- Setlist.fm to show concerts attended
+	- Somehow keep track of who you saw the show with
+		- links to their user profiles
+	- show a timeline with all this info compiled on it
+
+
+
+Questions:
+
+1. How can we determine what genre artists are in?
+2. Do we need a backend?
+3. Could we use Node to push updates to the page?
+4. What are we using for a datastore
+
+	

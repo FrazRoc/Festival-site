@@ -12,7 +12,6 @@ define([
       $('li a[href="#"]').parent().addClass('active');
       console.log("home view")
 
-      $("#projects-list").html("");
       this.$el.html(homeTemplate);
 
       //var sidebarView = new SidebarView();
